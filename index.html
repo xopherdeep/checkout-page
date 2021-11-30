@@ -90,7 +90,7 @@
               <input name="phone" type="text" placeholder="Your Phone Number"/>
               <input name="billing_name" type="text" placeholder="Billing Person Name"/>
               <input name="billign_email" type="email" placeholder="Billing Person Email"/>
-              <input type="checkbox" id="agreement" required/>
+              <input type="checkbox" id="agreement" />
               <label for="agreement">
                 By checking this box, I agree to pay $795 and will submit a PO within 10 business days.
               </label>
@@ -160,13 +160,14 @@
             document.getElementById('credit').style.display = 'block'
             document.getElementById('credit-desc').style.display = 'block'
             document.getElementById('po-desc').style.display = 'none'
-
+            document.getElementById('agreement').required = false
             break;
           case 'order':
             document.getElementById('credit').style.display = 'none'
             document.getElementById('credit-desc').style.display = 'none'
             document.getElementById('order').style.display = 'block'
             document.getElementById('po-desc').style.display = 'block'
+            document.getElementById('agreement').required = true
             break;
         }
       }
