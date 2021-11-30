@@ -16,10 +16,19 @@
   .checkout-page .wrapper {
     display: flex; }
     .checkout-page .wrapper aside {
-      width: 25%;
       background-color: #ccc; }
+      @media (min-width: 767px) {
+        .checkout-page .wrapper aside {
+          display: none; } }
+      @media (min-width: 992px) {
+        .checkout-page .wrapper aside {
+          width: 25%;
+          display: block; } }
     .checkout-page .wrapper main {
       width: 75%; }
+      @media (min-width: 767px) {
+        .checkout-page .wrapper main {
+          width: 100%; } }
       .checkout-page .wrapper main form {
         display: flex;
         flex-wrap: wrap;
@@ -31,15 +40,17 @@
           width: 100%;
           border-bottom: 1px solid #ddd; }
         .checkout-page .wrapper main form section {
-          flex: 1;
           width: 100%;
           text-align: left; }
+          @media (min-width: 767px) {
+            .checkout-page .wrapper main form section {
+              width: 100%; } }
           @media (min-width: 992px) {
             .checkout-page .wrapper main form section {
-              width: 50%; } }
+              width: calc(50% - 1em); } }
           @media (min-width: 1200px) {
             .checkout-page .wrapper main form section {
-              width: 25%; } }
+              width: calc(25% - 1em); } }
           .checkout-page .wrapper main form section p {
             color: #aaa; }
           .checkout-page .wrapper main form section input,
