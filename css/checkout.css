@@ -108,7 +108,8 @@
             text-align: center;
             font-weight: bold;
             font-size: 20px;
-            padding: 20px; }
+            padding: 20px;
+            cursor: pointer; }
           .checkout-page .wrapper main form section.summary b {
             font-weight: 300; }
           .checkout-page .wrapper main form section.summary .total {
