@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <title>
+      Checkout
+    </title>
+    <link rel="stylesheet" href="/css/checkout.css"/>
+  </head>
+  <body class="checkout-page">
+    <header>
+      <nav>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <aside>
+        <section>
+        </section>
+      </aside>
+      <main class="content">
+        <form>
+          <h1>checkout</h1>
+          <section class="login">
+            <h4>
+              create login
+              <small>
+              </small>
+            </h4>
+            <p>
+                Teachers & students share one login
+            </p>
+            <input type="text" placeholder="Username" />
+            <input type="text" placeholder="Enter your password"/>
+            <input type="text" placeholder="Create a 4-digit PIN"/>
+            <p>
+              PIN is for access to the manage account page.
+            </p>
+          </section>
+          <section class="information">
+            <h4>
+              customer information
+            </h4>
+            <p>
+              for the person/organization paying
+            </p>
+            <div>
+              <input name="name" type="text" placeholder="Your Name" />
+              <select name="occupation" id="">
+                <option value="">Librarian</option>
+              </select>
+              <input name="email" type="email" placeholder="Your Email"/>
+              <input type="text" placeholder="School Name"/>
+              <input type="text" placeholder="Billing Address"/>
+              <input name="city" type="text" placeholder="City"/>
+              <select name="state" id="">
+                <option value="">State</option>
+              </select>
+              <input name="zip" type="text" placeholder="ZIP"/>
+            </div>
+            <a>
+              Click here for international address
+            </a>
+          </section>
+          <section class="payment">
+            <h4>
+              secure payment
+              <small>
+              </small>
+            </h4>
+            <p>
+                Choose payment method below
+            </p>
+            <input name="payment" onchange="togglePaymentType(this)" type="radio" id="card" checked value="card"/>
+            <label for="card">Credit/Debit Card</label>
+            <br/>
+            <input name="payment" onchange="togglePaymentType(this)" type="radio" id="po" value="order"/>
+            <label for="po"> Purchase Order</label>
+            <div id="credit">
+              <input name="card" type="text" placeholder="Card Number" />
+              <div>
+                <input name="month" type="text" placeholder="MM"/>
+                <input name="year" type="text" placeholder="YY"/>
+                <input name="cvc" type="text" placeholder="CVC"/>
+              </div>
+              <button type="submit">
+                <i data-feather="lock"></i>
+                Pay Now
+                <i data-feather="arrow-right-circle"></i>
+              </button>
+            </div>
+            <div id="order">
+              <input name="phone" type="text" placeholder="Your Phone Number"/>
+              <input name="billing_name" type="text" placeholder="Billing Person Name"/>
+              <input name="billign_email" type="email" placeholder="Billing Person Email"/>
+              <input type="checkbox" id="agreement" required/>
+              <label for="agreement">
+                By checking this box, I agree to pay $795 and will submit a PO within 10 business days.
+              </label>
+
+              <button type="submit">
+                <i data-feather="lock"></i>
+                Activate & Send Invoice
+              </button>
+            </div>
+          </section>
+          <section class="summary">
+            <h4> </h4>
+            <p>
+              Order Summary
+            </p>
+            <div >
+              <b>
+                School Yearly plan
+              </b>
+              <div id="credit-desc">
+                <p>
+                  This is a yearly recurring subscription paid once a year at $795. Cancel anytime with 1 click on the manage account page.
+                  We send email reminders 30 days before each renewal.
+                </p>
+              </div>
+              <div id="po-desc">
+                <span>Instructions</span>
+                <p>
+                  Please submit a PO within 10 days to keep your account active.
+                  After activating you wil be emailed an invoice. Submit your PO via:
+                  <br/>
+                  <br/>
+                  Fax:
+                </p>
+                <b>(707) 312-8176</b>
+                <p>Email:</p>
+                <b>order@generatinggenius.com</b>
+              </div>
+            </div>
+            <select name="plan">
+              <option value="1year">
+                1 Year @ $795 per year
+              </option>
+            </select>
+            <div class="total">
+              <p class="price">
+                $795
+              </p>
+              <p style="float: left">
+                Total
+              </p>
+            </div>
+            <div class="discounts">
+              8 months Free will be auto added to plan
+            </div>
+          </section>
+        </form>
+      </main>
+    </div>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace()
+      function togglePaymentType(src){
+        switch (src.value) {
+          case 'card':
+            document.getElementById('order').style.display = 'none'
+            document.getElementById('credit').style.display = 'block'
+            document.getElementById('credit-desc').style.display = 'block'
+            document.getElementById('po-desc').style.display = 'none'
+
+            break;
+          case 'order':
+            document.getElementById('credit').style.display = 'none'
+            document.getElementById('credit-desc').style.display = 'none'
+            document.getElementById('order').style.display = 'block'
+            document.getElementById('po-desc').style.display = 'block'
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+.checkout-page {
+  font-family: Arial, Helvetica, sans-serif; }
+  .checkout-page h1,
+  .checkout-page h2,
+  .checkout-page h3,
+  .checkout-page h4,
+  .checkout-page h5,
+  .checkout-page h6 {
+    text-transform: capitalize; }
+  .checkout-page header {
+    width: 100%; }
+    .checkout-page header nav {
+      width: 100%;
+      height: 50px;
+      background-color: #ccc; }
+  .checkout-page .wrapper {
+    display: flex; }
+    .checkout-page .wrapper aside {
+      width: 25%;
+      background-color: #ccc; }
+    .checkout-page .wrapper main {
+      width: 75%; }
+      .checkout-page .wrapper main form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        width: 90%;
+        margin: auto;
+        text-align: center; }
+        .checkout-page .wrapper main form h1 {
+          width: 100%;
+          border-bottom: 1px solid #ddd; }
+        .checkout-page .wrapper main form section {
+          flex: 1;
+          width: 100%;
+          text-align: left; }
+          @media (min-width: 992px) {
+            .checkout-page .wrapper main form section {
+              width: 50%; } }
+          @media (min-width: 1200px) {
+            .checkout-page .wrapper main form section {
+              width: 25%; } }
+          .checkout-page .wrapper main form section p {
+            color: #aaa; }
+          .checkout-page .wrapper main form section input,
+          .checkout-page .wrapper main form section select {
+            background-color: #c9d2d8;
+            border: 0px;
+            border-radius: 5px;
+            width: 100%;
+            margin: 4px 0;
+            height: 45px;
+            padding: 0 15px; }
+          .checkout-page .wrapper main form section input[type="radio"] {
+            width: 25%;
+            height: 25px; }
+          .checkout-page .wrapper main form section input[type="checkbox"] {
+            width: 10%;
+            height: 25px;
+            margin: 5px; }
+          .checkout-page .wrapper main form section.information div {
+            display: flex;
+            flex-wrap: wrap; }
+            .checkout-page .wrapper main form section.information div input[name="name"] {
+              width: calc(65% - .5em);
+              margin-right: .5em; }
+            .checkout-page .wrapper main form section.information div input[name="city"] {
+              width: 40%; }
+            .checkout-page .wrapper main form section.information div input[name="zip"] {
+              width: 30%; }
+            .checkout-page .wrapper main form section.information div select {
+              width: 35%; }
+            .checkout-page .wrapper main form section.information div select[name="state"] {
+              width: calc(30% - 1em);
+              margin: 4px .5em; }
+          .checkout-page .wrapper main form section.information a {
+            color: orange;
+            text-decoration: underline; }
+          .checkout-page .wrapper main form section.payment #credit div {
+            display: flex; }
+            .checkout-page .wrapper main form section.payment #credit div input[name="month"] {
+              width: 33%; }
+            .checkout-page .wrapper main form section.payment #credit div input[name="year"] {
+              width: calc(33% - 1em);
+              margin: 4px .5em; }
+            .checkout-page .wrapper main form section.payment #credit div input[name="cvc"] {
+              width: 33%; }
+          .checkout-page .wrapper main form section.payment #order {
+            display: none; }
+          .checkout-page .wrapper main form section.payment button {
+            background-color: #f28106;
+            color: white;
+            margin-top: 5px;
+            border: 0px;
+            border-radius: 50px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 20px; }
+          .checkout-page .wrapper main form section.summary b {
+            font-weight: 300; }
+          .checkout-page .wrapper main form section.summary .total {
+            height: 50px; }
+            .checkout-page .wrapper main form section.summary .total .price {
+              color: black;
+              float: right;
+              font-weight: bold; }
+          .checkout-page .wrapper main form section.summary #po-desc {
+            display: none; }
+            .checkout-page .wrapper main form section.summary #po-desc span {
+              font-weight: bold;
+              color: orange; }
+          .checkout-page .wrapper main form section.summary .discounts {
+            background: #eee;
+            padding: 30px;
+            color: purple;
+            text-transform: capitalize;
+            text-align: center; }

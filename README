@@ -1,0 +1,3 @@
+compile the scss using a preprocessor.
+  npm install -g node-sass
+  node-sass scss/checkout.scss css/checkout.css

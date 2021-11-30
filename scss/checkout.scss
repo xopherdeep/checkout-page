@@ -1,0 +1,222 @@
+$primary-bg: #ccc;
+
+$breakpoints: (
+  'small':  767px,
+  'medium': 992px,
+  'large':  1200px
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Kitty Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+
+.checkout-page {
+  font-family: Arial, Helvetica, sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: capitalize;
+  }
+
+  header {
+    width: 100%;
+
+    nav {
+      width: 100%;
+      height: 50px;
+      background-color: $primary-bg;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+
+    aside {
+      width: 25%;
+      background-color: $primary-bg;
+    }
+
+    main {
+      width: 75%;
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+
+        h1 {
+          width: 100%;
+          border-bottom: 1px solid #ddd;
+        }
+
+        section {
+          flex: 1;
+          width: 100%;
+
+          @include respond-to('medium') {
+            width: 50%;
+          }
+
+          @include respond-to('large') {
+            width: 25%;
+          }
+          text-align: left;
+
+          p{
+            color: #aaa;
+          }
+
+          input,
+          select {
+            background-color: #c9d2d8;
+            border: 0px;
+            border-radius: 5px;
+            width: 100%;
+            margin: 4px 0;
+            height: 45px;
+            padding: 0 15px;
+          }
+
+          input[type="radio"]{
+            width: 25%;
+            height: 25px;
+          }
+          input[type="checkbox"]{
+            width: 10%;
+            height: 25px;
+            margin: 5px
+          }
+
+          &.login {}
+
+          &.information {
+            div {
+              display: flex;
+              flex-wrap: wrap;
+
+              input[name="name"] {
+                width: calc(65% - .5em);
+                margin-right: .5em;
+              }
+
+              input[name="city"] {
+                width: 40%;
+              }
+
+              input[name="zip"] {
+                width: 30%
+              }
+
+              select {
+                width: 35%;
+              }
+
+              select[name="state"] {
+                width: calc(30% - 1em);
+                margin: 4px .5em;
+              }
+            }
+
+            a {
+              color: orange;
+              text-decoration: underline;
+            }
+          }
+
+          &.payment {
+
+            #credit {
+              div{
+                display: flex;
+
+                input[name="month"] {
+                  width: 33%
+                }
+
+                input[name="year"] {
+                  width: calc(33% - 1em);
+                  margin: 4px .5em;
+                }
+
+                input[name="cvc"] {
+                  width: 33%
+                }
+              }
+            }
+
+            #order{
+              display: none;
+            }
+
+            button {
+              background-color: #f28106;
+              color: white;
+              margin-top: 5px;
+              border: 0px;
+              border-radius: 50px;
+              width: 100%;
+              text-align: center;
+              font-weight: bold;
+              font-size: 20px;
+              padding: 20px;
+            }
+          }
+
+          &.summary {
+            b{
+              font-weight: 300;
+            }
+            .total{
+              height: 50px;
+              .price{
+                color: black;
+                float: right;
+                font-weight: bold;
+              }
+            }
+
+            #po-desc{
+              span{
+                font-weight: bold;
+                color: orange
+              }
+              display: none;
+            }
+
+            .discounts{
+              background: #eee;
+              padding: 30px;
+              color: purple;
+              text-transform: capitalize;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
